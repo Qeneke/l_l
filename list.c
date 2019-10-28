@@ -9,11 +9,13 @@ struct n
 
 typedef struct n node;
 
-void handle(node* r){
-  while(r!=NULL){
-    printf("%d ", r->x);
-    r = r->next;
-  }
+void handle(node *r)
+{
+    while (r != NULL)
+    {
+        printf("%d ", r->x);
+        r = r->next;
+    }
 }
 
 int main()
@@ -33,16 +35,18 @@ int main()
     printf("%d\n", iter->x);
     iter = root;
     int i = 0;
-    while(iter->next != NULL){
-      printf("%dinci eleman: %d\n", i, iter->x);
-      iter = iter->next;
-      i++;
+    while (iter->next != NULL)
+    {
+        printf("%dinci eleman: %d\n", i, iter->x);
+        iter = iter->next;
+        i++;
     }
-    for(i=0;i<5;i++){
-      iter->next = (node*)malloc(sizeof(node));
-      iter = iter->next;
-      iter->x = i*10;
-      iter->next = NULL;
+    for (i = 0; i < 5; i++)
+    {
+        iter->next = (node *)malloc(sizeof(node));
+        iter = iter->next;
+        iter->x = i * 10;
+        iter->next = NULL;
     }
     handle(root);
 }
